@@ -7,7 +7,7 @@ version = '2025.8.0'                                # vscode版本
 extension_path = os.path.join(                      # ./extensions文件夹下的文件将会被复制到extension_path路径下
     vscode_server_path, 'extensions',
     f'ms-python.debugpy-{version}',
-    '/bundled/libs/debugpy/_vendored/pydevd/pydevd_plugins/extensions/types'
+    'bundled/libs/debugpy/_vendored/pydevd/pydevd_plugins/extensions/types'
 )
 
 cur_directory = os.path.dirname(__file__)
@@ -24,3 +24,5 @@ for source_file in all_files:
         os.path.join(source_file),
         extension_path
     )
+
+print("Success.")
