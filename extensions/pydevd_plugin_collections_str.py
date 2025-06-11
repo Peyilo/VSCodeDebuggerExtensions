@@ -3,19 +3,19 @@ from .pydevd_helpers import find_mod_attr
 
 
 class SizedShapeStr:
-    '''Displays the size of a Sized object before displaying its value.
-    '''
+
     def can_provide(self, type_object, type_name):
-        sized_obj = find_mod_attr('collections.abc', 'Sized')
-        return sized_obj is not None and issubclass(type_object, sized_obj)
+        type_list = [list, tuple, dict, set]
+        for type in type_list:
+            if isinstance(type_object, type):
+                return True
+        return False
 
     def get_str(self, val):
-        if hasattr(val, 'shape'):
-            return f'shape: {val.shape}, value: {val}'
         return f'len: {len(val)}, value: {val}'
+
 
 import sys
 
 if not sys.platform.startswith("java"):
     StrPresentationProvider.register(SizedShapeStr)
-    
