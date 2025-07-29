@@ -20,8 +20,8 @@ python copy.py --vscode /path/to/your/vscode-server
 
 #### 应用前
 
-![img_1](.\images\img_1.png)
+![img_1](./images/img_1.png)
 
 #### 应用后
 
-![img_2](.\images\img_2.png)
+![img_2](./images/img_2.png)
