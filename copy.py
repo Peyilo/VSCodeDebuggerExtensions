@@ -23,7 +23,7 @@ if not os.path.isdir(extensions_path):
 
 # 查找以 ms-python.debugpy 开头的扩展目录
 debugpy_dirs = [
-    name for name in os.listdir(extensions_path)
+    os.path.join(extensions_path, name) for name in os.listdir(extensions_path)
     if name.startswith("ms-python.debugpy") and os.path.isdir(os.path.join(extensions_path, name))
 ]
 
